@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Despesas</title>
+</head>
+<body>
+    <h1>Controle de Despesas Pessoais</h1>
+    <h2>Saldo Atual: R$ {{ saldo }}</h2>
+    <p><strong>Dica financeira:</strong> {{ dica }}</p>
+
+    <h3>Transações</h3>
+    <ul>
+        {% for transacao in transacoes %}
+            <li>
+                {{ transacao.tipo.capitalize() }}: {{ transacao.descricao }} - R$ {{ transacao.valor }} 
+                {% if transacao.categoria %} ({{ transacao.categoria }}){% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('adicionar') }}">Adicionar Transação</a>
+</body>
+</html>

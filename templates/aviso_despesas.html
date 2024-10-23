@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Limite de Despesa</title>
+</head>
+<body>
+    <h1>Alerta: Limite de Despesa Excedido!</h1>
+    <p>Você está tentando adicionar uma despesa de R$ {{ valor }}, mas o total das suas despesas mensais já é de R$ {{ despesas_mensais }}.</p>
+    <p>O limite de despesas mensais é de R$ {{ receita_mensal }}.</p>
+    <p>Recomenda-se rever essa transação para evitar que suas despesas excedam sua receita.</p>
+
+    <a href="{{ url_for('adicionar') }}">Voltar e ajustar despesa</a>
+    <br><br>
+    <a href="{{ url_for('index') }}">Ignorar e continuar</a>
+</body>
+</html>
